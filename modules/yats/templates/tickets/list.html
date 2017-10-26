@@ -13,7 +13,6 @@
         $(document).ready(function(){
             $('#myTable').DataTable({
                 {% if is_search %}"searching": false,{% endif %}
-                "pagingType": "first_last_numbers",
                 "language": {
                     search: '{% trans "Search" %}',
                     info:           '_START_ - _END_ {% trans "of" %} _TOTAL_',
