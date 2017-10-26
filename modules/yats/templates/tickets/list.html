@@ -13,6 +13,20 @@
         $(document).ready(function(){
             $('#myTable').DataTable({
                 {% if is_search %}"searching": false,{% endif %}
+                "pagingType": "first_last_numbers",
+                "language": {
+                    search: '{% trans "Search" %}',
+                    info:           '_START_ - _END_ {% trans "of" %} _TOTAL_',
+                    lengthMenu:     '_MENU_',
+                    zeroRecords:    '{% trans "No matching records found" %}',
+                    loadingRecords: '{% trans "Loading" %}',
+                    paginate: {
+                        first:      '{% trans "first" %}',
+                        last:       '{% trans "last" %}',
+                        next:       '{% trans "next" %}',
+                        previous:   '{% trans "previous" %}',
+                    },
+                },
                 "lengthMenu": [ 10, 20, 50, 100 ],
                 "pageLength": 20,
                 "order": [[ 2, "asc" ]],
